@@ -14,9 +14,10 @@ def modify_file(filename):
 
       #Copy input file to temporary file, modifying as we go
       for line in i:
-           if 'CHEMICAL PARAMETER' in line or 'CONTAMINANT' in line:
+           if 'ACENAPHTHENE' in line:
                 startPrint = True
-           if 'Notes' in line:
+           if 'ZINC' in line:
+                t.write(line)
                 startPrint = False
            if startPrint and line.strip():
                 t.write(line)
