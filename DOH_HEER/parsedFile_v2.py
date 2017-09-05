@@ -15,6 +15,10 @@ def modify_file(filename):
       #Copy input file to temporary file, modifying as we go
       for line in i:
            if 'ACENAPHTHENE' in line:
+                tempString = '';
+                for count in range(1, len(line.split(','))-1):
+                    tempString = tempString + "c"+str(count)+",";
+                t.write(tempString[:-1]+"\n");
                 startPrint = True
            if 'ZINC' in line:
                 t.write(line)
